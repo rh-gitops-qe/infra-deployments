@@ -205,7 +205,7 @@ sed -i.bak "s/rekor-server.enterprise-contract-service.svc/$rekor_server/" $ROOT
 
 if ! git diff --exit-code --quiet; then
     git commit -a -m "Preview mode, do not merge into main"
-    git push -f --set-upstream $MY_GIT_FORK_REMOTE $PREVIEW_BRANCH
+    git push -f --set-upstream https://rh-gitops-bot:$GITHUB_TOKEN@github.com/rh-gitops-qe/infra-deployments.git $PREVIEW_BRANCH
 fi
 
 # Create the root Application
